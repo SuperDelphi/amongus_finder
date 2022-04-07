@@ -19,7 +19,7 @@ PATTERNS = [
 ]
 
 # Add the "flipped" version of each pattern to the list
-PATTERNS = PATTERNS + list(map(lambda row: row[::-1], PATTERNS))
+PATTERNS = PATTERNS + [list(map(lambda row: row[::-1], pattern)) for pattern in PATTERNS]
 
 # Get the image path
 if (len(sys.argv[1:]) > 0):
