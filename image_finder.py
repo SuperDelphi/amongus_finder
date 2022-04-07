@@ -1,3 +1,4 @@
+from os import sys
 from PIL import Image
 
 # PATTERN ROWS MUST HAVE THE SAME LENGTH!!!
@@ -9,7 +10,11 @@ pattern = [
     [0, 1, 0, 1]
 ]
 
-image_path = input("Image path : ") # Get the image path
+# Get the image path
+if (len(sys.argv[1:]) > 0):
+    image_path = sys.argv[1]
+else:
+    image_path = input("Image path : ")
 
 # Open the image
 with Image.open(image_path) as img:
