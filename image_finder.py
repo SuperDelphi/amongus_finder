@@ -23,7 +23,6 @@ with Image.open(image_path) as img:
     pixel_map = img.load() # Extract the pixel map
 
     cpt = 0
-    COLOR_INDEX = 31
 
     # Loop through the pixels
     for y in range(img_height - pattern_height + 1):
@@ -37,7 +36,6 @@ with Image.open(image_path) as img:
                     cur_color = pixel_map[i + x, j + y]
                     cur_pattern = pattern[j][i]
 
-                    # print("x:" + str(i + x), "y:" + str(j + y), end=" / ")
                     if (cur_pattern == 0):
                         if (colors[0]):
                             colors[0].append(cur_color)
